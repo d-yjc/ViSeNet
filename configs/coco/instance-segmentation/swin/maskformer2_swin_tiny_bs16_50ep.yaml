@@ -1,0 +1,48 @@
+_BASE_: ../maskformer2_R50_bs16_50ep.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2SwinTransformer"
+  SWIN:
+    EMBED_DIM: 96
+    DEPTHS: [2, 2, 6, 2]
+    NUM_HEADS: [3, 6, 12, 24]
+    WINDOW_SIZE: 7
+    APE: False
+    DROP_PATH_RATE: 0.3
+    PATCH_NORM: True
+    # NUM_CLASSES: 1
+  WEIGHTS: "swin-t.pkl"
+  PIXEL_MEAN: [123.675, 116.280, 103.530]
+  PIXEL_STD: [58.395, 57.120, 57.375]
+
+SOLVER:
+  IMS_PER_BATCH: 3
+  BASE_LR: 0.00001
+  OPTIMIZER: "ADAMW"
+  AMP:
+    ENABLED: False
+  # MAX_ITER: 30000
+  # STEPS: (15000, 20000)
+  MAX_ITER: 40000
+  STEPS: (24000, 32000)
+
+INPUT:
+  IMAGE_SIZE: 640
+  MIN_SCALE: 0.1
+  MAX_SCALE: 1.0 # originally 2.0
+  FORMAT: "RGB"
+  DATASET_MAPPER_NAME: "hicost"
+DATASETS:
+  NAME: "hicost"
+  TRAIN: ("hicost_train",)
+  TEST: ("hicost_test",)
+DATALOADER:
+  FILTER_EMPTY_ANNOTATIONS: True
+  NUM_WORKERS: 1
+TEST:
+  EVAL_PERIOD: 10000
+EVALUATION:
+  DATASET: "hicost"
+  RESULT_THRESHOLD: 0.91
+  MODEL_DIR: "output/model_final_v2.pth"
+  OUTPUT_DIR: "evals/results"
