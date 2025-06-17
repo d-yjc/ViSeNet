@@ -2,7 +2,7 @@
 <p align="center">
 <img src="https://github.com/d-yjc/ViSeNet/blob/main/repo_images/showcase.png" alt="Heatmap Fixation Showcase Image" style="width:90%;">
 <p/>
-ViSeNet is a novel, deep-learning SOD (Salient Object Detection) network which utilises both visual and semantic annotation information in order to power its saliency predictions on images.
+ViSeNet is a novel, deep-learning SOD (Salient Object Detection) network which utilises both visual and semantic annotation information in order to power its saliency predictions on objects in images with rich context.
   
 Our [Relationship Module](https://github.com/d-yjc/ViSeNet/blob/main/mask2former/modeling/transformer_decoder/relation_module.py) is what provides ViSeNet the capability of using relation-aware features in order to enhance its predictions. 
 
