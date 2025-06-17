@@ -19,11 +19,12 @@ Objects are represented as the nodes, with the relationship between them definin
 <p/>
 
 Furthermore, our model's object relation-aware features allows it to accurately predict small objects that are salient yet often undetected
-by state-of-the-art to their lack of size (i.e., low-level feature)
+by state-of-the-art to their lack of size (i.e., low-level feature). 
 <p align="center">
 <img src="https://github.com/d-yjc/ViSeNet/blob/main/repo_images/comparisons.png" alt="Visual Comparisons" style="width:80%;">
 <p/>
-
+  
+*GT = Ground Truth* 
   
 ##
 ## Install 
