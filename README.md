@@ -1,3 +1,9 @@
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/abb0dab7-32cc-4715-9e15-d652ce8a8916" alt="Slide1" width="800">
+</p>
+
+
 # ViSeNet: Visual Semantic Network for Salient Object Detection with Language using Tranformers
 <p align="center">
 <img src="https://github.com/d-yjc/ViSeNet/blob/main/repo_images/showcase.png" alt="Heatmap Fixation Showcase Image" style="width:90%;">
